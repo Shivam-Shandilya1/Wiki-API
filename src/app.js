@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 
 //connection with database established
 require("../src/db/conn");
-
+//establish Database Model and Schema
+require("./models/mens");
 
 const app=express();
 
@@ -17,11 +18,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-const articleSchema = new mongoose.Schema({
-    title:String,
-    content:String
-
-});
 
 
 app.listen(port,()=>
